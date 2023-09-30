@@ -6,6 +6,8 @@ WORK IN PROGRESS
 * Run : npm install
 
 
+* build : tsc
+
 ```
 
 import axios from 'axios';
