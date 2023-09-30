@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es5",                        // Version ECMAScript cible
+    "module": "commonjs",                   // Système de modules à utiliser
+    "strict": true,                         // Activer tous les contrôles stricts
+    "esModuleInterop": true,                // Permettre l'interopérabilité esModule
+    "skipLibCheck": true,                   // Ignorer la vérification des fichiers de définition de bibliothèque
+    "forceConsistentCasingInFileNames": true,// Assurer une casse cohérente dans les noms de fichiers
+    "outDir": "./dist"                      // Répertoire de sortie pour les fichiers transpilés
+  },
+  "include": [
+    "src/**/*.ts"                          // Inclure les fichiers TypeScript dans ce répertoire
+  ],
+  "exclude": [
+    "node_modules"                         // Exclure le dossier node_modules
+  ]
+}
