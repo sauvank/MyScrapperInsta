@@ -77,9 +77,9 @@ export interface InstagramUser {
     connected_fb_page: null;
     pronouns: any[];
     edge_felix_video_timeline: EdgeFelixVideoTimeLine;
-    edge_owner_to_timeline_media: any[];
-    edge_saved_media: any[];
-    edge_media_collections: any[];
+    edge_owner_to_timeline_media: EdgeFelixVideoTimeLine;
+    edge_saved_media: EdgeFelixVideoTimeLine;
+    edge_media_collections: EdgeFelixVideoTimeLine;
 }
 export interface NodeData {
     __typename: string;

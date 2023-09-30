@@ -1,10 +1,11 @@
 {
   "name": "@lucas_monroe/my_scrapper_insta",
   "description": "WORK IN PROGRESS",
-  "version": "1.0.6",
+  "version": "1.0.9",
   "main": "lib/ScrapperInsta.js",
   "types": "lib/insta.d.ts",
   "scripts": {
+    "public_publish" : "npm publish --access public",
     "build": "tsc --build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

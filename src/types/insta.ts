@@ -78,9 +78,9 @@ export interface InstagramUser{
     connected_fb_page: null;
     pronouns: any[]; // Replace 'any' with a more specific type if possible
     edge_felix_video_timeline: EdgeFelixVideoTimeLine; // Replace 'any' with a more specific type if possible
-    edge_owner_to_timeline_media: any[]; // Replace 'any' with a more specific type if possible
-    edge_saved_media: any[]; // Replace 'any' with a more specific type if possible
-    edge_media_collections: any[]; // Replace 'any' with a more specific type if possible
+    edge_owner_to_timeline_media: EdgeFelixVideoTimeLine; // Replace 'any' with a more specific type if possible
+    edge_saved_media: EdgeFelixVideoTimeLine; // Replace 'any' with a more specific type if possible
+    edge_media_collections: EdgeFelixVideoTimeLine; // Replace 'any' with a more specific type if possible
 }
 
 export interface NodeData{

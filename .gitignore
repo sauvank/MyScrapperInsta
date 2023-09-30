@@ -1,4 +1,4 @@
 .idea
-rm -rf nonode_modules
+node_modules
 .package-lock.json
 test
