@@ -1,17 +1,11 @@
 {
-  "dependencies": {
-    "axios": "^1.5.1",
-    "axios-mock-adapter": "^1.22.0"
-  },
-  "devDependencies": {
-    "@types/node": "^20.7.2",
-    "typescript": "^5.2.2"
-  },
-  "name": "my_scrapper_insta",
+  "name": "@lucas_monroe/my_scrapper_insta",
   "description": "WORK IN PROGRESS",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "1.0.5",
+  "main": "lib/ScrapperInsta.js",
+  "types": "lib/ScrapperInsta.d.ts",
   "scripts": {
+    "build": "tsc --build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,5 +17,13 @@
   "bugs": {
     "url": "https://github.com/sauvank/MyScrapperInsta/issues"
   },
-  "homepage": "https://github.com/sauvank/MyScrapperInsta#readme"
+  "homepage": "https://github.com/sauvank/MyScrapperInsta#readme",
+  "dependencies": {
+    "axios": "^1.5.1",
+    "axios-mock-adapter": "^1.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.7.2",
+    "typescript": "^5.2.2"
+  }
 }

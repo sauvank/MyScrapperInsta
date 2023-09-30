@@ -1,6 +1,6 @@
 import axios from 'axios';
-import {InstaCallBack, InstagramUser} from "../types/insta";
-import {confInterface} from "../types";
+import {InstaCallBack, InstagramUser} from "./types/insta";
+import {confInterface} from "./types";
 
 
 export class ScrapperInsta{

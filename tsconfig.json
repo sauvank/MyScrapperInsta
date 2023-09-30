@@ -1,17 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es5",                        // Version ECMAScript cible
-    "module": "commonjs",                   // Système de modules à utiliser
-    "strict": true,                         // Activer tous les contrôles stricts
-    "esModuleInterop": true,                // Permettre l'interopérabilité esModule
-    "skipLibCheck": true,                   // Ignorer la vérification des fichiers de définition de bibliothèque
-    "forceConsistentCasingInFileNames": true,// Assurer une casse cohérente dans les noms de fichiers
-    "outDir": "./dist"                      // Répertoire de sortie pour les fichiers transpilés
+    "allowJs": false,
+    "checkJs": false,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["ES2020", "ESNext.Array", "DOM"],
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "noImplicitThis": true,
+    "outDir": "lib",
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "rootDir": "src",
+    "skipLibCheck": true,
+    "declaration": true,
+    "target": "ES2020"
   },
-  "include": [
-    "src/**/*.ts"                          // Inclure les fichiers TypeScript dans ce répertoire
-  ],
-  "exclude": [
-    "node_modules"                         // Exclure le dossier node_modules
-  ]
+  "exclude": ["node_modules"],
+  "include": ["./src/**/*.ts"]
 }
