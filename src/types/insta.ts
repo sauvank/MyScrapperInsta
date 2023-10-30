@@ -141,6 +141,66 @@ export interface NodeEdgeFelixVideo{
 
 export interface InstaCallBack{
     data:{
-        user: InstagramUser
+        user: InstagramUser,
+        status:string
     }
+}
+
+export interface IInstagramVideo {
+    count: number;
+    pageInfo: { has_next_page: boolean; end_cursor: string };
+    edges: IVideoNode[];
+}
+export interface IVideoNode {
+    __typename: string;
+    id: string;
+    shortcode: string;
+    dimensions: { height: number; width: number };
+    displayUrl: string;
+    owner: { id: string; username: string };
+    isVideo: boolean;
+    videoUrl: string;
+    videoViewCount: number;
+    edgeMediaToCaption: { edges: ICaptionEdge[] };
+}
+
+export interface ICaptionEdge {
+    node: { text: string };
+}
+
+export interface IEdgeOwnerToTimelineMedia {
+    count: number;
+    page_info: { has_next_page: boolean; end_cursor: string };
+    edges: INodeEdge[];
+}
+
+export interface INodeEdge {
+    node: INode;
+}
+
+export interface INode {
+    __typename: string;
+    id: string;
+    shortcode: string;
+    dimensions: { height: number; width: number };
+    display_url: string;
+    edge_media_to_tagged_user: { edges: IUserEdge[] };
+    // ... d'autres propriétés selon vos besoins
+}
+
+export interface IUserEdge {
+    node: IUserNode;
+}
+
+export interface IUserNode {
+    user: {
+        full_name: string;
+        followed_by_viewer: boolean;
+        id: string;
+        is_verified: boolean;
+        profile_pic_url: string;
+        username: string;
+    };
+    x: number;
+    y: number;
 }

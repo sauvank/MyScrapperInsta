@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {InstaCallBack, InstagramUser} from "./types/insta";
 import {confInterface} from "./types";
+import {User} from "./User";
 
 
 export class ScrapperInsta{
@@ -9,9 +10,11 @@ export class ScrapperInsta{
     private VERSION_API = 'v1'
 
     private conf: confInterface;
+    private jsonBrut: object = {};
 
     constructor(conf: confInterface) {
         this.conf = conf;
+
     }
 
     private getHeader(){
@@ -47,10 +50,14 @@ export class ScrapperInsta{
         return `${this.BASE_URL}/${this.VERSION_API}`;
     }
 
-    public async getUserMedia(username: string): Promise<InstaCallBack> {
+    private getJsonBrut(){
+        return this.jsonBrut;
+    }
+
+    public async getUserMedia(username: string): Promise<User> {
         const path = `users/web_profile_info/?username=${username}`;
         const {data} =  await this.sendRequest(`${this.getBaseFullBaseUrl()}/${path}`)
-        return  await data;
+        return new User(data.data.user);
     }
 }
 

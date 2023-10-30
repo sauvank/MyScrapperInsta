@@ -2,14 +2,17 @@
 
 WORK IN PROGRESS
 
+* npm install :
 
-* Run : npm install
+    <code>
+       npm i @lucas_monroe/my_scrapper_insta
+    </code>
 
 
-* build : tsc
 
+* Exemple implement
 ```
-
+// IMPORT DEPS
 import axios from 'axios';
 import {ScrapperInsta} from "@lucas_monroe/my_scrapper_insta";
 import {InstaCallBack, NodeEdgeFelixVideo} from "@lucas_monroe/my_scrapper_insta/lib/types/insta";
@@ -30,14 +33,51 @@ export class Exemple{
                 x_ig_app_id : '936619743392459'
             }
         }
+        
+        //INIT CLASS + TRY TO GET DATA FROM INSTA 'kleinerpixel'
         const  result:InstaCallBack = await new ScrapperInsta(conf).getUserMedia('kleinerpixel')
 
-        //GET MEDIA POST BY USER
-        const displayUrls =  result.data.user.edge_felix_video_timeline.edges.map((d:NodeEdgeFelixVideo) => {
-            return d.node.display_url;
-        })
-        console.log(displayUrls)
+        //DISPLAY ALL URLS FROM POST VIDEO OR PICTURE OF USER
+         const user = await new ScrapperInsta(conf).getUserMedia('kleinerpixel')
+
+        const pictures = user.getPicturetimeline.getPictures
+        const videos = user.getVideotimeline.getVideos
+            const urls = [...pictures,...videos].flatMap((media) => {
+                return media.getDisplayUrl
+            })
+
+        console.log(urls)
+
     }
 }
 
 new Exemple().run();
+```
+
+### For Update / Local tests
+
+* Install dependences
+
+    <code>
+    npm install
+    </code>
+
+
+* build :
+
+    <code>
+    tsc
+    </code>
+
+
+* generated doc is in folder : 
+<code>
+./docs/index.html
+</code>
+
+
+* For update doc run
+
+    <code>
+    npm run doc
+    </code>

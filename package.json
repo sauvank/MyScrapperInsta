@@ -1,12 +1,13 @@
 {
   "name": "@lucas_monroe/my_scrapper_insta",
   "description": "WORK IN PROGRESS",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "main": "lib/ScrapperInsta.js",
   "types": "lib/insta.d.ts",
   "scripts": {
-    "public_publish" : "npm publish --access public",
+    "public_publish": "npm publish --access public",
     "build": "tsc --build",
+    "doc": "typedoc --entryPoints ./src --entryPointStrategy expand --out docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.7.2",
+    "typedoc": "^0.25.3",
     "typescript": "^5.2.2"
   }
 }
