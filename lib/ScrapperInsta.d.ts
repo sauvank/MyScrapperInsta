@@ -1,12 +1,14 @@
-import { InstaCallBack } from "./types/insta";
 import { confInterface } from "./types";
+import { User } from "./User";
 export declare class ScrapperInsta {
     private BASE_URL;
     private VERSION_API;
     private conf;
+    private jsonBrut;
     constructor(conf: confInterface);
     private getHeader;
     private sendRequest;
     private getBaseFullBaseUrl;
-    getUserMedia(username: string): Promise<InstaCallBack>;
+    private getJsonBrut;
+    getUserMedia(username: string): Promise<User>;
 }

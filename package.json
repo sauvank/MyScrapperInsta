@@ -1,11 +1,11 @@
 {
   "name": "@lucas_monroe/my_scrapper_insta",
   "description": "WORK IN PROGRESS",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "main": "lib/ScrapperInsta.js",
   "types": "lib/insta.d.ts",
   "scripts": {
-    "public_publish": "npm publish --access public",
+    "public_publish": "npm run build && npm publish --access public",
     "build": "tsc --build",
     "doc": "typedoc --entryPoints ./src --entryPointStrategy expand --out docs",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/sauvank/MyScrapperInsta#readme",
   "dependencies": {
-    "@lucas_monroe/my_scrapper_insta": "^1.0.5",
+    "@lucas_monroe/my_scrapper_insta": "^1.1.0",
     "axios": "^1.5.1",
     "axios-mock-adapter": "^1.22.0"
   },
