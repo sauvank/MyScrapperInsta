@@ -10,7 +10,7 @@ WORK IN PROGRESS
 
 
 
-* Exemple implement
+* Exemple implement Typescript
 ```
 // IMPORT DEPS
 import axios from 'axios';
@@ -52,6 +52,35 @@ export class Exemple{
 }
 
 new Exemple().run();
+```
+
+Exemple js classic
+
+```
+var {ScrapperInsta} = require("@lucas_monroe/my_scrapper_insta")
+
+const  conf = {
+cookie: {
+// SET YOUR ds_user_id AND sessionid FROM COOKIE
+// F12 + application FOR SHOW THIS ( AFTER LOGIN INTO INSTAGRAM )
+ds_user_id:'XXXXXXXXXXXXX',
+sessionid:'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+},
+header: {
+x_asbd_id: '129477',
+x_ig_app_id : '936619743392459'
+}
+}
+
+new ScrapperInsta(conf).getUserMedia('kleinerpixel').then((user) => {
+const pictures = user.getPicturetimeline.getPictures
+const videos = user.getVideotimeline.getVideos
+const urls = [...pictures,...videos].flatMap((media) => {
+return media.getDisplayUrl
+})
+console.log(urls)
+})
+
 ```
 
 ### For Update / Local tests
