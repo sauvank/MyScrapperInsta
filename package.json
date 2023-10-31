@@ -1,11 +1,11 @@
 {
   "name": "@lucas_monroe/my_scrapper_insta",
   "description": "WORK IN PROGRESS",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "lib/ScrapperInsta.js",
   "types": "lib/insta.d.ts",
   "scripts": {
-    "public_publish": "npm run build && npm publish --access public",
+    "public_publish": "npm run doc && npm run build && npm publish --access public",
     "build": "tsc --build",
     "doc": "typedoc --entryPoints ./src --entryPointStrategy expand --out docs",
     "test": "ts-node test/index.ts"

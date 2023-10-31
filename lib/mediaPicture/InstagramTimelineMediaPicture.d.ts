@@ -1,10 +1,14 @@
 import { IEdgeOwnerToTimelineMedia } from "../types/insta";
 import { InstagramMediaNode } from "./InstagramMediaNode";
+import { RequestInsta } from "../RequestInsta";
 export declare class InstagramTimelineMediaPicture {
     private count;
     private pageInfo;
     private nodes;
-    constructor(timelineMediaData: IEdgeOwnerToTimelineMedia);
+    private scrapper;
+    private pages;
+    private userId;
+    constructor(userId: string, timelineMediaData: IEdgeOwnerToTimelineMedia, scrapper: RequestInsta);
     get getCount(): number;
     get getPageInfo(): {
         has_next_page: boolean;

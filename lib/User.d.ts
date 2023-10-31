@@ -2,7 +2,10 @@ import { InstagramUser } from "./types/insta";
 import { BioLink } from "./BioLink";
 import { InstagramVideo } from "./mediaVideo/InstagramVideo";
 import { InstagramTimelineMediaPicture } from "./mediaPicture/InstagramTimelineMediaPicture";
+import { RequestInsta } from "./RequestInsta";
+import { Feed } from "./Feed/Feed";
 export declare class User {
+    private pages;
     private agentType;
     private biography;
     private bioLinks;
@@ -65,7 +68,8 @@ export declare class User {
     private pronouns;
     private edge_felix_video_timeline;
     private edge_owner_to_timeline_media;
-    constructor(user: InstagramUser);
+    private scrapper;
+    constructor(user: InstagramUser, scrapper: RequestInsta);
     get getAgentType(): any;
     get getBiography(): string;
     get getBioLinks(): BioLink[];
@@ -136,4 +140,6 @@ export declare class User {
     get getPronouns(): string[];
     get getVideotimeline(): InstagramVideo;
     get getPicturetimeline(): InstagramTimelineMediaPicture;
+    getFeed(page?: number): Promise<Feed>;
+    getFeedPage(page: number): Promise<Feed>;
 }
