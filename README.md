@@ -59,6 +59,14 @@ export class Exemple{
             ...page3.getItems.map(item => item.getBestResolution.getUrl),
             ...page1.getItems.map(item => item.getBestResolution.getUrl)
         ])
+        
+        /**
+         * Get all Media and display only urls
+         */
+
+        const pages = await user.getAllPages()
+        const urls = pages.map(page => page.getItems.map(item => item.getBestResolution.getUrl)).flat();
+        console.log(urls)
     }
 }
 

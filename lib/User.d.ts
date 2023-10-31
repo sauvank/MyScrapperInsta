@@ -142,4 +142,5 @@ export declare class User {
     get getPicturetimeline(): InstagramTimelineMediaPicture;
     getFeed(page?: number): Promise<Feed>;
     getFeedPage(page: number): Promise<Feed>;
+    getAllPages(): Promise<Feed[]>;
 }

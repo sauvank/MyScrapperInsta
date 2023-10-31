@@ -46,4 +46,5 @@ export class Feed{
     get getStatus(): string {
         return this.data.status;
     }
+
 }
