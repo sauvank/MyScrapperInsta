@@ -204,3 +204,39 @@ export interface IUserNode {
     x: number;
     y: number;
 }
+
+export interface IFeed {
+    items: IItemsFeed[];
+    num_results: number;
+    more_available: boolean;
+    next_max_id: string;
+    user: any;
+    auto_load_more_enabled: boolean;
+    status: string;
+}
+
+export interface IItemsFeed{
+    image_versions2: {
+        candidates:IFeedItemMedia[]
+    }
+}
+
+export interface IFeedUser{
+    pk: string;
+    pk_id: string;
+    full_name: string;
+    is_private: boolean;
+    strong_id__: string;
+    profile_grid_display_type: string;
+    username: string;
+    is_verified: boolean;
+    profile_pic_id: string;
+    profile_pic_url: string;
+}
+
+export interface IFeedItemMedia {
+    width: number;
+    height: number;
+    url: string;
+    scans_profile: string;
+}

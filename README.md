@@ -34,20 +34,31 @@ export class Exemple{
             }
         }
         
-        //INIT CLASS + TRY TO GET DATA FROM INSTA 'kleinerpixel'
-        const  result:InstaCallBack = await new ScrapperInsta(conf).getUserMedia('kleinerpixel')
+        const user = await new ScrapperInsta(conf).getUserMedia('kleinerpixel')
+        const feed = await user.getFeed()
+        const page2 = await user.getFeedPage(2)
+        const page3 = await user.getFeedPage(3)
+        const page1 = await user.getFeedPage(1)
 
-        //DISPLAY ALL URLS FROM POST VIDEO OR PICTURE OF USER
-         const user = await new ScrapperInsta(conf).getUserMedia('kleinerpixel')
+        /**
+         * Get all media with all resolution for each
+         */
+        const getAllMediaWithAllResolution= feed.getItems.map(item => item.getMedias)
 
-        const pictures = user.getPicturetimeline.getPictures
-        const videos = user.getVideotimeline.getVideos
-            const urls = [...pictures,...videos].flatMap((media) => {
-                return media.getDisplayUrl
-            })
+        /**
+         * Get Only the best media resolution for each
+         */
+        const bestForEach= feed.getItems.map(item => item.getBestResolution.getUrl)
 
-        console.log(urls)
-
+        /**
+         * Get With multiple page
+         */
+        console.log([
+            ...feed.getItems.map(item => item.getBestResolution.getUrl),
+            ...page2.getItems.map(item => item.getBestResolution.getUrl),
+            ...page3.getItems.map(item => item.getBestResolution.getUrl),
+            ...page1.getItems.map(item => item.getBestResolution.getUrl)
+        ])
     }
 }
 
