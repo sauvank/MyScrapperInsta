@@ -5,6 +5,8 @@ export declare class RequestInsta {
     constructor(conf: any);
     private getHeader;
     sendRequest(url: string): Promise<import("axios").AxiosResponse<any, any>>;
+    postRequest(url: string, data: {}): Promise<import("axios").AxiosResponse<any, any>>;
     getFeed(userId: string, max_id: string | void): Promise<import("axios").AxiosResponse<any, any>>;
-    getBaseFullBaseUrl(): string;
+    getClips(userId: string, max_id: string | void): Promise<import("axios").AxiosResponse<any, any>>;
+    get getBaseFullBaseUrl(): string;
 }

@@ -40,13 +40,36 @@ export class RequestInsta {
         return await  axios.get(url, { headers })
     }
 
+    public  async postRequest(url: string, data:{}) {
+        const headers = {
+            ...this.getHeader(),
+            'x-csrftoken': 'pUl2LpVnNJeTgLC',
+        };
+
+        const queryString = Object.keys(data)
+            .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+            .join('&');
+
+       return await axios.post(`${this.getBaseFullBaseUrl}/clips/user/`, queryString, { headers })
+    }
+
     public async getFeed(userId:string,max_id:string|void) {
         const maxId = max_id ?  `&max_id=${max_id}` : '';
         const url = `https://www.instagram.com/api/v1/feed/user/${userId}/?count=12${maxId}`;
         return await this.sendRequest(url);
     }
 
-    public getBaseFullBaseUrl(){
+    public async getClips(userId:string,max_id:string|void) {
+        const maxId = max_id ?  `&max_id=${max_id}` : '';
+        const url = `${this.getBaseFullBaseUrl}/clips/user`;
+        return await this.postRequest(url, {
+            'include_feed_video' : true,
+            'page_size' : 12,
+            'target_user_id' : userId,
+        });
+    }
+
+    get getBaseFullBaseUrl(){
         return `${this.BASE_URL}/${this.VERSION_API}`;
     }
 }

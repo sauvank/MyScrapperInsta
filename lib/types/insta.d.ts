@@ -244,3 +244,10 @@ export interface IFeedItemMedia {
     url: string;
     scans_profile: string;
 }
+export interface IVideoVersion {
+    type: number;
+    width: number;
+    height: number;
+    url: number;
+    id: number;
+}

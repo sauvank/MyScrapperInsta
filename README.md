@@ -72,6 +72,19 @@ export class Exemple{
         const pages = await user.getAllPages()
         const urls = pages.map(page => page.getItems.map(item => item.getBestResolution.getUrl)).flat();
         console.log(urls)
+        
+        
+         /**
+         * Get the latest clip by user.
+         * `user.getClips()` returns an array of Clip objects, each containing two functions:
+         *
+         * - `getAllTypes`: Get all alternative versions of the same clip.
+         * - `first`: Get the first clip from the alternative clips.
+         */
+        const clips = await user.getClips()
+        const clipsUrl = clips.map(clip => clip.first.getUrl)
+        console.log(clipsUrl)
+        
     }
 }
 

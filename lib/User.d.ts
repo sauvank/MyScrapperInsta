@@ -4,6 +4,7 @@ import { InstagramVideo } from "./mediaVideo/InstagramVideo";
 import { InstagramTimelineMediaPicture } from "./mediaPicture/InstagramTimelineMediaPicture";
 import { RequestInsta } from "./RequestInsta";
 import { Feed } from "./Feed/Feed";
+import { Clip } from "./Clip/Clip";
 export declare class User {
     private pages;
     private agentType;
@@ -129,7 +130,7 @@ export declare class User {
     get getPinnedChannelsListCount(): number;
     get getProfilePicUrl(): string;
     get getProfilePicUrlHd(): string;
-    get getRequestedByViewer(): boolean;
+    get sendRequestedByViewer(): boolean;
     get getShouldShowCategory(): boolean;
     get getShouldShowPublicContacts(): boolean;
     get getShowAccountTransparencyDetails(): boolean;
@@ -142,5 +143,9 @@ export declare class User {
     get getPicturetimeline(): InstagramTimelineMediaPicture;
     getFeed(page?: number): Promise<Feed>;
     getFeedPage(page: number): Promise<Feed>;
-    getAllPages(): Promise<Feed[]>;
+    getAllFeedPages(): Promise<Feed[]>;
+    getClips(): Promise<{
+        getAllTypes: Clip[];
+        first: Clip;
+    }[]>;
 }
