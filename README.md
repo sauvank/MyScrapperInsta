@@ -9,6 +9,11 @@ WORK IN PROGRESS
     </code>
 
 
+* Get ds_user_id and sessionid token, F12 + go to Application => Cookies => instagram.com
+  
+
+<img src="https://image.noelshack.com/fichiers/2023/44/3/1698847250-exemple.png">
+
 
 * Exemple implement Typescript
 ```
@@ -114,7 +119,7 @@ console.log(urls)
 * build :
 
     <code>
-    tsc
+    npm run build
     </code>
 
 

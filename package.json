@@ -1,7 +1,7 @@
 {
   "name": "@lucas_monroe/my_scrapper_insta",
   "description": "WORK IN PROGRESS",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "main": "lib/ScrapperInsta.js",
   "types": "lib/insta.d.ts",
   "scripts": {
